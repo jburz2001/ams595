@@ -1,2 +1,2 @@
 # ams595
-Homework assignments completed for AMS 510 at Stony Brook University.
+Homework assignments completed for AMS 595 at Stony Brook University.
