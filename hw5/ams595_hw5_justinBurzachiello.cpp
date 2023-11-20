@@ -4,7 +4,7 @@
 #include <cmath>
 #include <string>
 
-void print_vector(std::vector<int>&);
+void print_vector(std::vector<int>);
 
 bool isprime(int);
 std::vector<int> factorize(int);
@@ -57,34 +57,18 @@ int main() {
         fib = fibs[fibs.size()-1] + fibs[fibs.size()-2];
     }
     std::cout << "Last 3 Fibonacci numbers less than 4,000,000: " << fibs[fibs.size()-1] << ", " << fibs[fibs.size()-2] << ", and " << fibs[fibs.size()-3] << ".\n";
+    std::cout << "\n";
 
     /* Q4a If Prime */
-    std::cout << "\nTesting whether the following arguments to isprime are prime numbers:\n";
     test_isprime();
     std::cout << "\n";
 
     /* Q4b Factorize */
-    std::vector<int> vec2   = factorize(2);
-    std::vector<int> vec72  = factorize(72);
-    std::vector<int> vec196 = factorize(196);
-
-    std::cout << "Factors of numbers " << 2 << ", " << 72 << ", and " << 196 << ":\n";
-    print_vector(vec2);
-    print_vector(vec72);
-    print_vector(vec196);
-    // test_factorize();
+    test_factorize();
     std::cout << "\n";
 
     /* Q4c Prime Factorization */
-    std::vector<int> vec2_prime   = prime_factorize(2);
-    std::vector<int> vec72_prime  = prime_factorize(72);
-    std::vector<int> vec196_prime = prime_factorize(196);
-
-    std::cout << "Prime factorizations of numbers " << 2 << ", " << 72 << ", and " << 196 << ":\n";
-    print_vector(vec2_prime);
-    print_vector(vec72_prime);
-    print_vector(vec196_prime);
-    // test_prime_factorize();
+    test_prime_factorize();
     std::cout << "\n";
 
     /* Q5 Recursive Functions and Loops */
@@ -95,7 +79,7 @@ int main() {
     return 0;
 }
 
-void print_vector(std::vector<int>& v) {
+void print_vector(std::vector<int> v) {    
     for (int i = 0; i < v.size(); i++) {
         std::cout << v[i] << " ";
     }
@@ -134,11 +118,11 @@ std::vector<int> factorize(int n) {
     return answer;
 }
 
-// void test_factorize() {
-//     print_vector(factorize(2));
-//     print_vector(factorize(72));
-//     print_vector(factorize(196));
-// }
+void test_factorize() {
+    print_vector(factorize(2));
+    print_vector(factorize(72));
+    print_vector(factorize(196));
+}
 
 std::vector<int> prime_factorize(int n) {
     std::vector<int> answer;
@@ -151,11 +135,11 @@ std::vector<int> prime_factorize(int n) {
     return answer;
 }
 
-// void test_prime_factorize() {
-//     print_vector(prime_factorize(2));
-//     print_vector(prime_factorize(72));
-//     print_vector(prime_factorize(196));
-// }
+void test_prime_factorize() {
+    print_vector(prime_factorize(2));
+    print_vector(prime_factorize(72));
+    print_vector(prime_factorize(196));
+}
 
 void pascal_row(int n) {
     std::vector<std::vector<int>> rows;
