@@ -1,37 +1,49 @@
+//import libraries:
+//  iostream to handle inputs and outputs of data
+//  fstream to handle files
+//  vector to store data in dynamic arrays
+//  cmath to handle mathematical operations
+//  string to instantiate string objects
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <cmath>
 #include <string>
 
+//declare the following functions so that the compiler
+//  understands what their titles refer to
 void print_vector(std::vector<int>);
-
 bool isprime(int);
 std::vector<int> factorize(int);
 std::vector<int> prime_factorize(int);
 void pascal_row(int);
-
 void test_isprime();
 void test_factorize();
 void test_prime_factorize();
 
-
+//define the main function that is run upon executing the compiled file
 int main() {
     /* Q1 Conditional Statements */
+    //ask the user to input a number that assigns variable n its value
     int n;
     std::cout << "Enter a number: ";
     std::cin >> n;
 
+    //based the on value of n, perform some action ...
     switch(n) {
+        //if n==-1, output "negative one" to the console
         case -1:
             std::cout << "negative one\n";
             break;
+        //if n==0, output "negative one" to the console
         case 0:
             std::cout << "zero\n";
             break;
+        //if n==1, output "negative one" to the console
         case 1:
             std::cout << "positive one\n";
             break;
+        //else, output "negative one" to the console
         default:
             std::cout << "other value\n";
             break;
@@ -39,11 +51,13 @@ int main() {
     std::cout << "\n";
 
     /* Q2 Printing a Vector */
+    //instantiate an empty vector then use a for loop to populate it
     std::vector<int> vec;
     int size = 10;
     for (int i = 1; i <= size; i++) {
         vec.push_back(i);
     }
+    //print out the vector to the console element by element via print_vector
     std::cout << "Printing a vector of size " << size << ":\n";
     print_vector(vec);
     std::cout << "\n";
